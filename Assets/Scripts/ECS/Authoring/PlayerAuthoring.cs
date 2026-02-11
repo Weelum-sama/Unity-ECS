@@ -7,6 +7,8 @@ public class PlayerAuthoring : MonoBehaviour
         public override void Bake(PlayerAuthoring authoring) {
             var entity = GetEntity(TransformUsageFlags.Dynamic);
             AddComponent<PlayerTag>(entity);
+            AddComponent<InitializeCameraTargetTag>(entity);
+            AddComponent<CameraTarget>(entity);
         }
     }
 
