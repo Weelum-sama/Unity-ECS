@@ -1,10 +1,8 @@
 using Unity.Burst;
-using Unity.Collections;
 using Unity.Entities;
-using Unity.Mathematics;
 using Unity.Transforms;
 
-partial struct EnemyMoveSystem : ISystem
+partial struct EnemyDirectionSystem : ISystem
 {
     [BurstCompile]
     public void OnCreate(ref SystemState state)

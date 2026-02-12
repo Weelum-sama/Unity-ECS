@@ -328,7 +328,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1876320230}
   serializedVersion: 5
-  m_Mass: 10
+  m_Mass: 1e+9
   m_LinearDamping: Infinity
   m_AngularDamping: Infinity
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -452,7 +452,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerAuthoring
   AttackPrefab: {fileID: 7749119020180366011, guid: 23b90b708342426479286dd35cb80fa3, type: 3}
-  PrefabSize: 0.35
+  PrefabSize: 0.45
   CooldownTime: 1
   PercepcionRadius: 10
 --- !u!1660057539 &9223372036854775807

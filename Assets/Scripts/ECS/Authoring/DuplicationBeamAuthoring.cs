@@ -9,10 +9,12 @@ public class DuplicationBeamAuthoring : MonoBehaviour
     private class Baker : Baker<DuplicationBeamAuthoring> {
         public override void Bake(DuplicationBeamAuthoring authoring) {
             var entity = GetEntity(TransformUsageFlags.Dynamic);
-            AddComponent(entity, new DuplicationBeamData {
+            AddComponent(entity, new DuplicateBeamData {
                 MovingSpeed = authoring.MovingSpeed,
                 duplicationAmount = authoring.duplicationAmount,
             });
+            AddComponent<MarkedForDestructionTag>(entity);
+            SetComponentEnabled<MarkedForDestructionTag>(entity, false);
         }
     }
 }

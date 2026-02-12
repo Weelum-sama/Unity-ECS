@@ -7,6 +7,7 @@ using Unity.Transforms;
 
 public partial struct PlayerAttackSystem : ISystem 
 {
+    [BurstCompile]
     public void OnCreate(ref SystemState state) {
         state.RequireForUpdate<BeginInitializationEntityCommandBufferSystem.Singleton>();
         state.RequireForUpdate<PhysicsWorldSingleton>();

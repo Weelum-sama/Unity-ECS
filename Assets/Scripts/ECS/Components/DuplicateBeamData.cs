@@ -1,6 +1,6 @@
 using Unity.Entities;
 
-public struct DuplicationBeamData : IComponentData 
+public struct DuplicateBeamData : IComponentData 
 {
     public float MovingSpeed;
     public int duplicationAmount;
