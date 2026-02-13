@@ -1,13 +1,15 @@
 using Unity.Collections;
 using Unity.Entities;
 using Unity.Physics;
-using UnityEngine;
 
 public struct DuplicateBeamAttackJob : ITriggerEventsJob 
 {
     [ReadOnly] public ComponentLookup<DuplicateBeamData> DuplicationBeamLookup;
     [ReadOnly] public ComponentLookup<EnemyTag> EnemyLookup;
     public ComponentLookup<MarkedForDestructionTag> EntitiesToDestroyLookup;
+
+    [WriteOnly]
+    public NativeList<Entity> EntitiesToDuplicate;
     
     public void Execute(TriggerEvent triggerEvent) {
         Entity duplicateBeamEntity;
@@ -25,8 +27,7 @@ public struct DuplicateBeamAttackJob : ITriggerEventsJob
             return;
         }
 
-        // TODO : Duplicate enemy entity
-        Debug.Log("Duplicating");
+        EntitiesToDuplicate.Add(enemyEntity);
 
         EntitiesToDestroyLookup.SetComponentEnabled(duplicateBeamEntity, true);
     }
