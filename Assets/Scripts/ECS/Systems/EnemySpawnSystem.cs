@@ -7,6 +7,8 @@ public partial struct EnemySpawnSystem : ISystem
     public void OnCreate(ref SystemState state) {
         state.RequireForUpdate<BeginInitializationEntityCommandBufferSystem.Singleton>();
         state.RequireForUpdate<PlayerTag>();
+        state.RequireForUpdate<EnemyCountProxy>();
+        state.RequireForUpdate<EnemyCount>();
     }
     public void OnUpdate(ref SystemState state) {
         var deltaTime = SystemAPI.Time.DeltaTime;
@@ -15,6 +17,10 @@ public partial struct EnemySpawnSystem : ISystem
 
         var playerEntity = SystemAPI.GetSingletonEntity<PlayerTag>();
         var playerPosition = SystemAPI.GetComponent<LocalTransform>(playerEntity).Position;
+        
+        var enemyCountProxy = SystemAPI.GetSingletonEntity<EnemyCountProxy>();
+        var enemyCount = SystemAPI.GetComponent<EnemyCount>(enemyCountProxy);
+        var currentEnemiesCount = enemyCount.Value;
 
         foreach (var (spawnState, spawnData) in SystemAPI.Query<RefRW<EnemySpawnState>, EnemySpawnData>()) {
             spawnState.ValueRW.SpawnTimer -= deltaTime;
@@ -32,6 +38,11 @@ public partial struct EnemySpawnSystem : ISystem
             spawnPoint += playerPosition;
 
             ecb.SetComponent(newEnemy, LocalTransform.FromPosition(spawnPoint));
+
+            var newEnemiesCount = currentEnemiesCount + 1;
+
+            var newEnemyCount = new EnemyCount { Value = newEnemiesCount };
+            ecb.SetComponent(enemyCountProxy, newEnemyCount);
         }
     }
 }
