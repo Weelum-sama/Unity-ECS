@@ -148,7 +148,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2732ea0a78660154da098582e21cbad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyCountAuthoring
-  Tracker: {fileID: 0}
 --- !u!4 &713615303
 Transform:
   m_ObjectHideFlags: 0
@@ -194,7 +193,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemySpawningAuthoring
   EnemyPrefab: {fileID: 5540710996295881723, guid: 10eac7f472ec421429031455d6980c30, type: 3}
-  SpawnInterval: 0.005
+  SpawnInterval: 0.05
   SpawnDistance: 25
   RandomSeed: 19568473
 --- !u!4 &1229491029
@@ -380,7 +379,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerAuthoring
   AttackPrefab: {fileID: 7749119020180366011, guid: 23b90b708342426479286dd35cb80fa3, type: 3}
   PrefabSize: 0.45
-  CooldownTime: 1
+  CooldownTime: 0.2
   PercepcionRadius: 10
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

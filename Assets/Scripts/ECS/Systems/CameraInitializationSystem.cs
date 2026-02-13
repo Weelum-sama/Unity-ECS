@@ -9,7 +9,6 @@ public partial struct CameraInitializationSystem : ISystem
         state.RequireForUpdate<InitializeCameraTargetTag>();
     }
 
-    [BurstCompile]
     public void OnUpdate(ref SystemState state) { 
         if (CameraTargetSingleton.Instance == null) return;
 
