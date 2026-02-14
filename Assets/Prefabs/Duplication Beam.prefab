@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2464559473564050959}
   - component: {fileID: 3894782678962652467}
   - component: {fileID: 3789944536732644731}
+  - component: {fileID: -7380936439857702069}
   m_Layer: 8
   m_Name: Duplication Beam
   m_TagString: Untagged
@@ -29,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -0.65}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.35, y: 0.35, z: 0.35}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -111,3 +112,16 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-7380936439857702069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7749119020180366011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 852b8d08175e0fc4e9ee69bcc99882d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DuplicateBeamAttack
+  _MoveSpeed: 7.5

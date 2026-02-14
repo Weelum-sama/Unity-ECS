@@ -11,7 +11,9 @@ public class EnemyMove : MonoBehaviour {
     private void Update() {
         if(PlayerSingleton.Instance == null) return;
 
-        Vector3 directionToPlayer = PlayerSingleton.Instance.gameObject.transform.position - transform.position;
+        Vector3 playerPosition = PlayerSingleton.Instance.gameObject.transform.position;
+        Vector3 directionToPlayer = playerPosition - transform.position;
+
         _characterMovement.MoveDirection = directionToPlayer.normalized;
     }
 }
