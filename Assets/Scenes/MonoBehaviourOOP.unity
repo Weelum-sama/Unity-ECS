@@ -589,6 +589,7 @@ GameObject:
   - component: {fileID: 6248626530425516234}
   - component: {fileID: 6248626530425516236}
   - component: {fileID: 6248626530425516235}
+  - component: {fileID: 6248626530425516237}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -689,7 +690,7 @@ Transform:
   m_GameObject: {fileID: 4743227079508458783}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 537.4998, y: 521.6124, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -786,7 +787,7 @@ Transform:
   m_GameObject: {fileID: 4226208581493865702}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 537.4998, y: 521.6124, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1188,8 +1189,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3ca7db997289404b9674fbd103fb146, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CharacterMovement
-  MoveDirection: {x: 0, y: 0}
   _moveSpeed: 5
+--- !u!114 &6248626530425516237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2435719570463301348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbb7386b9a6a6a04291e8f94b588a966, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerSingleton
 --- !u!1 &6430401175517139809
 GameObject:
   m_ObjectHideFlags: 0
@@ -1739,7 +1751,7 @@ Transform:
   m_GameObject: {fileID: 1360877482887113253}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 537.4998, y: 521.6124, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

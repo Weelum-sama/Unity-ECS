@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 3997581913156392316}
   - component: {fileID: 7886400765221744505}
   - component: {fileID: 2515975963236726426}
+  - component: {fileID: 6285442405539391388}
+  - component: {fileID: 3144113347928742335}
   m_Layer: 7
   m_Name: Enemy
   m_TagString: Untagged
@@ -139,3 +141,28 @@ Rigidbody:
   m_Interpolate: 2
   m_Constraints: 120
   m_CollisionDetection: 0
+--- !u!114 &6285442405539391388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5540710996295881723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3ca7db997289404b9674fbd103fb146, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterMovement
+  _moveSpeed: 2
+--- !u!114 &3144113347928742335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5540710996295881723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95b9988f83cc3d74fa2b39a4b7df7bde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyMove
