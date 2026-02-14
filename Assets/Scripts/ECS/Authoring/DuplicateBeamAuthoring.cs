@@ -11,7 +11,6 @@ public class DuplicateBeamAuthoring : MonoBehaviour
             var entity = GetEntity(TransformUsageFlags.Dynamic);
             AddComponent(entity, new DuplicateBeamData {
                 MovingSpeed = authoring.MovingSpeed,
-                duplicationAmount = authoring.duplicationAmount,
             });
             AddComponent<MarkedForDestructionTag>(entity);
             SetComponentEnabled<MarkedForDestructionTag>(entity, false);

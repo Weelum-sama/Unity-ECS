@@ -5,7 +5,6 @@ using Unity.Physics;
 
 partial struct CharacterMoveSystem : ISystem
 {
-
     [BurstCompile]
     public void OnUpdate(ref SystemState state)
     {
