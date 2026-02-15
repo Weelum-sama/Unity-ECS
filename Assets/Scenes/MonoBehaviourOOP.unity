@@ -165,6 +165,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemySpawner
   Enemies: []
   _enemyPrefab: {fileID: 5540710996295881723, guid: 10eac7f472ec421429031455d6980c30, type: 3}
+  _enemyCountDisplayer: {fileID: 6848908126292006460}
+  _spawnInterval: 0.05
+  _spawnDistance: 25
+  _randomSeed: 19568473
 --- !u!114 &76118597778234996
 MonoBehaviour:
   m_ObjectHideFlags: 0
