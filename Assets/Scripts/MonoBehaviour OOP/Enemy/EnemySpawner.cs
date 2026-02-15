@@ -62,7 +62,7 @@ public class EnemySpawner : MonoBehaviour
     private void UpdateList(GameObject enemy) {
         Enemies.Add(enemy);
         TotalEnemies++;
-        _enemyCountDisplayer._currentEnemyCount = TotalEnemies;
+        _enemyCountDisplayer.CurrentEnemyCount = TotalEnemies;
         if (OnEnemySpawnEvent != null) {
             OnEnemySpawnEvent(this);
         }

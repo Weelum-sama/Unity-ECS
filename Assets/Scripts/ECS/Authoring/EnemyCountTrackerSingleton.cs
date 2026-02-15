@@ -16,6 +16,6 @@ public class EnemyCountTrackerSingleton : MonoBehaviour
     }
 
     public void Update() {
-        displayer._currentEnemyCount = totalEnemies;
+        displayer.CurrentEnemyCount = totalEnemies;
     }
 }
