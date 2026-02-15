@@ -1255,7 +1255,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerAutoAttack
   _attackPrefab: {fileID: 7749119020180366011, guid: 23b90b708342426479286dd35cb80fa3, type: 3}
-  _cooldownTime: 1
+  _cooldownTime: 0.2
   _perceptionRadius: 10
 --- !u!1 &6430401175517139809
 GameObject:
