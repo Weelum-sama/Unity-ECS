@@ -9,6 +9,6 @@ public class CharacterMovement : MonoBehaviour
     private float _moveSpeed;
 
     private void Update() {
-        transform.position += new Vector3(MoveDirection.x, MoveDirection.y, 0f) * _moveSpeed * Time.deltaTime;
+        transform.position += new Vector3(MoveDirection.x, MoveDirection.y) * _moveSpeed * Time.deltaTime;
     }
 }

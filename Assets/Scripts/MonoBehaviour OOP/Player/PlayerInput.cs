@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 [RequireComponent(typeof(CharacterMovement))]
 public class PlayerInput : MonoBehaviour 
@@ -14,6 +15,9 @@ public class PlayerInput : MonoBehaviour
 
     private void Update() {
         var currentInput = _input.Player.Move.ReadValue<Vector2>();
+
+        currentInput = new Vector2(0.71f, -0.71f); // For testing purposes
+
         _characterMovement.MoveDirection = currentInput;
     }
 }

@@ -13,6 +13,11 @@ public class FPSCounter : MonoBehaviour {
     private int _averageCounter = 0;
     private int _currentAveraged;
 
+    private int[] _frameIntervals = {600, 500, 400, 300, 200, 100, 60, 0 };
+    private int _currentInterval = 0;
+    private int _isLowerCount = 0;
+    private int _pauseThreshold = 100;
+
     void Awake() {
         // Cache strings and create array
         {
@@ -21,8 +26,11 @@ public class FPSCounter : MonoBehaviour {
             }
             _frameRateSamples = new int[_averageFromAmount];
         }
+
+        Application.targetFrameRate = 600;
     }
     void Update() {
+        TestIntervals();
         // Sample
         {
             var currentFrame = (int)Math.Round(1f / Time.smoothDeltaTime); // If your game modifies Time.timeScale, use unscaledDeltaTime and smooth manually (or not).
@@ -50,5 +58,15 @@ public class FPSCounter : MonoBehaviour {
                 _ => "?"
             };
         }
+    }
+
+    private void TestIntervals() {
+        if (_currentAveraged < _frameIntervals[_currentInterval] && _currentAveraged > 0) {
+            _isLowerCount++;
+            if (_isLowerCount < _pauseThreshold) return;
+            PauseManager.Instance.PauseGame();
+            _currentInterval++;
+            _isLowerCount = 0;
+        } else { _isLowerCount = 0; }
     }
 }

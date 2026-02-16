@@ -4,6 +4,8 @@ using UnityEngine.InputSystem;
 
 public class PauseManager : MonoBehaviour
 {
+    public static PauseManager Instance;
+
     [SerializeField]
     private GameObject _fpsCounter, _pauseScreen;
 
@@ -13,6 +15,13 @@ public class PauseManager : MonoBehaviour
     private void Awake() {
         _input = new Input();
         _input.Enable();
+
+        if (Instance != null) {
+            Destroy(gameObject);
+            return;
+        }
+
+        Instance = this;
     }
 
     private void OnEnable() {
@@ -20,6 +29,10 @@ public class PauseManager : MonoBehaviour
     }
 
     private void Pause(InputAction.CallbackContext context) {
+        PauseGame();
+    }
+
+    public void PauseGame() {
         _paused = !_paused;
         _fpsCounter.SetActive(_paused);
         _pauseScreen.SetActive(!_paused);
