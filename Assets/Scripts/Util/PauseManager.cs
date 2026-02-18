@@ -1,10 +1,10 @@
-using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PauseManager : MonoBehaviour
 {
     public static PauseManager Instance;
+    public bool TestMode = false;
 
     [SerializeField]
     private GameObject _fpsCounter, _pauseScreen;

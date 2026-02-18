@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class FPSCounter : MonoBehaviour {
     public Text Text;
+    public bool PauseIntervalsForTests = false;
 
     private Dictionary<int, string> CachedNumberStrings = new();
     private int[] _frameRateSamples;
@@ -30,7 +31,7 @@ public class FPSCounter : MonoBehaviour {
         Application.targetFrameRate = 600;
     }
     void Update() {
-        TestIntervals();
+        if(PauseIntervalsForTests) TestIntervals();
         // Sample
         {
             var currentFrame = (int)Math.Round(1f / Time.smoothDeltaTime); // If your game modifies Time.timeScale, use unscaledDeltaTime and smooth manually (or not).
